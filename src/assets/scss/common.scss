@@ -1,0 +1,16 @@
+@import '~@csstools/normalize.css';
+
+*,
+*:before,
+*:after{
+  box-sizing: inherit
+}
+html{
+  box-sizing: border-box;
+  font: 14px 'PingFang SC', Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
