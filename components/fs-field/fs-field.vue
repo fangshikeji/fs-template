@@ -62,8 +62,10 @@
 			};
 		},
 		created() {
-			this.labelWidth = this.form.labelWidth
-			this.textareaHeight = this.form.textareaHeight
+			if (this.form) {
+				this.labelWidth = this.form.labelWidth
+				this.textareaHeight = this.form.textareaHeight
+			}
 		},
 		computed: {
 			cls(data) {

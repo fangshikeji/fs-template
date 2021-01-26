@@ -29,10 +29,14 @@
 		inject: ['radioGroup'],
 		data() {
 			return {
-				selected: this.checked,
 				reverse: false,
 				justify: ''
 			};
+		},
+		computed: {
+			selected() {
+				return this.checked
+			}
 		},
 		created() {
 			const radioGroup = this.radioGroup
