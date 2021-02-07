@@ -1,8 +1,23 @@
 <template>
 	<view class="radio" :class="[justify,{reverse}]" @tap="toggle">
-	  <fs-icon v-if="icon" source="out" :type="icon" :color-type="selected ? checkedColorType : 'gray'" :size="iconSize" :color="checkedColor"></fs-icon>
-	  <fs-icon v-else :type="selected ? 'icon-checked' : 'icon-uncheck'" :color-type="selected ? checkedColorType : 'gray'" :size="iconSize" :color="checkedColor"></fs-icon>
-	  <view class="lable">
+	  <fs-icon 
+			v-if="icon" 
+			source="out" 
+			:type="icon" 
+			:color-type="selected ? checkedColorType : 'gray'" 
+			:size="iconSize" 
+			:color="checkedColor"
+			>
+		</fs-icon>
+	  <fs-icon 
+			v-else 
+			:type="selected ? 'icon-checked' : 'icon-uncheck'" 
+			:color-type="selected ? checkedColorType : 'gray'" 
+			:size="iconSize" 
+			:color="checkedColor"
+		>
+		</fs-icon>
+	  <view class="label">
 	    {{label}}
 	    <slot />
 	  </view>
@@ -30,12 +45,13 @@
 		data() {
 			return {
 				reverse: false,
-				justify: ''
+				justify: '',
+				selected: this.checked
 			};
 		},
-		computed: {
-			selected() {
-				return this.checked
+		watch: {
+			checked(val) {
+				this.selected = val
 			}
 		},
 		created() {
@@ -62,7 +78,7 @@
   align-items: center;
   justify-content: flex-start;
 }
-.lable{
+.label{
   margin-left: 20rpx;
 }
 .reverse{
