@@ -10,7 +10,7 @@
 		props: {
 			src: {
 				type: String,
-				default: '/static/images/nodata/1.png'
+				default: './nodata.png'
 			},
 			text: {
 				type: String,
